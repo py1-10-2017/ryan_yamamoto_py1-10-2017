@@ -1,0 +1,11 @@
+2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+	Wrong port on server
+
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+
+	No password in config, Make sure you supplied the correct password value to 		self.config.password
+
+(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+	needed to use SSH in workbench in order for connection to be made
