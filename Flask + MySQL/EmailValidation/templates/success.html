@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Email Addresses</title>
+  </head>
+  <body>
+    <h1>Email Address Page</h1>
+      <ul>
+        {% for names in email_address %}
+        <li>{{names.email}}</li>
+        {% endfor %}
+      </ul>
+  </body>
+</html>
