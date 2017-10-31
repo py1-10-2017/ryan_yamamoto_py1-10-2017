@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Posts</title>
+  </head>
+  <body style="margin-left:20px;">
+  <h1>Messages/Comments</h1>
+  <h3>Hello {{session.first_name}} {{session.last_name}} <a href="/logout">Log Out</a></h3>
+    <form action="/message" method=POST>
+      <h2 style="color:blue;">Post a Message</h2>
+      <textarea name="message" rows="5" cols="80"></textarea>
+      <input type="submit" value="Post a Message">
+    </form>
+    {% for message in messages %}
+    <p style="font-weight:bold; color:blue;">{{message.first_name}} {{message.last_name}} : {{message.created_at.strftime('%c')}}</p>
+    <p>{{message.message}}</p>
+        <form action="/comment" method=POST>
+          {% for comment in message.comments %}
+            <p style="padding-left:40px; font-weight:bold; color:green;">{{comment.first_name}} {{comment.last_name}} : {{comment.created_at.strftime('%c')}}</p>
+            <p style="padding-left:50px;">{{comment.comment}}</p>
+          {% endfor %}
+          <h3 style="color:green;">Post a Comment</h3>
+          <textarea name="comment" rows="5" cols="80"></textarea>
+          <input type="hidden" name="message_id" value="{{message.id}}">
+          <input type="submit" value="Post a Comment">
+        </form>
+      {% endfor %}
+  </body>
+</html>
