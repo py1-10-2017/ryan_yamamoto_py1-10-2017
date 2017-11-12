@@ -1,0 +1,40 @@
+.locations{
+  display: inline-block;
+}
+
+#farm{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+#cave{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#house{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#casino{
+  display: inline-block;
+  border: 2px solid;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#reset input{
+  margin-left: 10px;
+}
