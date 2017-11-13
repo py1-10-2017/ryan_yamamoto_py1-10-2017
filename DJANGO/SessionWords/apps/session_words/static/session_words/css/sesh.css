@@ -1,0 +1,26 @@
+
+#left{
+  width: 30%;
+  border-right: 1px solid black;
+  display: inline-block;
+}
+
+#right{
+  vertical-align: top;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+span.big{
+  font-size: 20px;
+  font-weight: bold;
+}
+span.red{
+  color: red;
+}
+span.green{
+  color: green;
+}
+span.blue{
+  color: blue;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'session_words/css/sesh.css' %}">
+  </head>
+  <body>
+    <div id="left">
+      <form action="/process" method="POST">
+        {% csrf_token %}
+        <h3>Add a new word</h3>
+        <input type="text" name="word">
+        <p>Choose color</p>
+        <input type="radio" name="color" value="red"> Red<br>
+        <input type="radio" name="color" value="green"> Green<br>
+        <input type="radio" name="color" value="blue" checked> Blue<br><br>
+        <input type="checkbox" name="font_size" value="big" unchecked> show in BIG fonts!<br><br>
+        <input type="submit" value="Add to Session">
+      </form>
+    </div>
+    <div id="right">
+      <form action="/reset" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Clear Session">
+      </form>
+      {% for words in request.session.the_list %}
+        {% if words.big_font == False %}
+          <p><span class="{{words.color}}">{{words.word}}</span> - added on {{words.time}}</p>
+        {% else %}
+          <p><span class="{{words.color}} big">{{words.word}}</span> - added on {{words.time}}</p>
+        {% endif %}
+      {% endfor %}
+      </div>
+  </body>
+</html>

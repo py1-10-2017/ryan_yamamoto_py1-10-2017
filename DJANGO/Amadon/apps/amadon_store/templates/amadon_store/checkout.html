@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Checkout</title>
+  </head>
+  <body>
+    <h3>Thank you for your business!</h3>
+    <p>We charged your credit card for ${{request.session.last_charge}}.</p>
+    <p>You have ordered {{request.session.items}} items so far and spent ${{request.session.total_spent}} with Amadon.com!</p>
+    <a href="/">Go back</a>
+    <!-- <form action="/reset" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="Clear Session">
+    </form> -->
+  </body>
+</html>
